@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Names</title>
+</head>
+<body>
+    <div id="userNames"></div>
+    <button id="displayNamesBtn">Display Names</button>
+
+    <script>
+        const users = [
+            { name: "Alice", city: "New York", age: 30 },
+            { name: "Bob", city: "San Francisco", age: 25 },
+            { name: "Charlie", city: "Los Angeles", age: 35 }
+        ];
+
+        const displayNamesBtn = document.getElementById("displayNamesBtn");
+        const userNamesDiv = document.getElementById("userNames");
+
+        displayNamesBtn.addEventListener("click", () => {
+            userNamesDiv.innerHTML = "";
+            users.forEach(user => {
+                const nameElement = document.createElement("h1");
+                nameElement.textContent = user.name;
+                userNamesDiv.appendChild(nameElement);
+            });
+        });
+    </script>
+</body>
+</html>
