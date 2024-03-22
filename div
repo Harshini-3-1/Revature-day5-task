@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Events</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 10px;
+            display: inline-block;
+        }
+        #div1:hover {
+            background-color: blue;
+        }
+        #div3 {
+            background-image: url('your-image-url.jpg');
+            background-size: cover;
+        }
+        #div4 {
+            transition: all 0.5s ease;
+        }
+        #div4.active {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="box" onclick="changeColor(this)"></div>
+    <div id="div2" class="box" onmouseenter="changeColor(this)"></div>
+    <div id="div3" class="box" onclick="addImage(this)"></div>
+    <div id="div4" class="box" onclick="changeSize(this)"></div>
+
+    <script>
+        function changeColor(element) {
+            element.style.backgroundColor = "green";
+        }
+
+        function addImage(element) {
+            // Add your image URL here
+            element.style.backgroundImage = "url('your-image-url.jpg')";
+            element.style.backgroundSize = "cover";
+        }
+
+        function changeSize(element) {
+            element.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
